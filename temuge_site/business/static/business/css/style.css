@@ -26,13 +26,18 @@ a {
     margin: auto;
 }
 
+/* Prevent sticky header from covering sections when using anchor links */
+section {
+    scroll-margin-top: 100px;
+}
+
 /* Header */
 .header {
     background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .nav {
@@ -67,7 +72,7 @@ nav a:hover {
 .hero {
     background: linear-gradient(135deg, #0f766e, #064e3b);
     color: white;
-    padding: 90px 0;
+    padding: 110px 0 90px;
 }
 
 .hero-content {
@@ -88,8 +93,8 @@ nav a:hover {
 }
 
 .hero h2 {
-    font-size: 52px;
-    line-height: 1.1;
+    font-size: 46px;
+    line-height: 1.15;
     margin-bottom: 20px;
 }
 
@@ -125,7 +130,7 @@ nav a:hover {
 
 .btn.secondary {
     background: #22c55e;
-    color: white;
+    color: #ffffff;
 }
 
 .btn.secondary:hover {
@@ -133,12 +138,12 @@ nav a:hover {
 }
 
 .btn.outline {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #ffffff;
+    color: #ffffff;
 }
 
 .btn.outline:hover {
-    background: white;
+    background: #ffffff;
     color: #0f766e;
 }
 
@@ -149,7 +154,7 @@ nav a:hover {
 }
 
 .hero-card {
-    background: white;
+    background: #ffffff;
     color: #1f2937;
     padding: 30px;
     border-radius: 18px;
@@ -168,6 +173,10 @@ nav a:hover {
 .hero-card li {
     padding: 10px 0;
     border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-card li:last-child {
+    border-bottom: none;
 }
 
 /* General Sections */
@@ -204,7 +213,7 @@ nav a:hover {
 }
 
 .service-card {
-    background: white;
+    background: #ffffff;
     padding: 25px;
     border-radius: 14px;
     border: 1px solid #e5e7eb;
@@ -261,7 +270,7 @@ nav a:hover {
 
 /* Prices */
 .price-table {
-    background: white;
+    background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
     max-width: 750px;
@@ -291,7 +300,7 @@ nav a:hover {
 /* CTA */
 .cta {
     background: #111827;
-    color: white;
+    color: #ffffff;
     padding: 70px 0;
     text-align: center;
 }
@@ -332,10 +341,27 @@ nav a:hover {
     margin-bottom: 12px;
 }
 
+.contact-card a {
+    color: #0f766e;
+    font-weight: 700;
+}
+
+.contact-card .btn {
+    color: inherit;
+}
+
+.contact-card .btn.secondary {
+    color: #ffffff;
+}
+
+.contact-card .btn.primary {
+    color: #1f2937;
+}
+
 /* Footer */
 .footer {
     background: #064e3b;
-    color: white;
+    color: #ffffff;
     padding: 25px 0;
 }
 
@@ -364,6 +390,10 @@ nav a:hover {
 }
 
 @media (max-width: 650px) {
+    section {
+        scroll-margin-top: 140px;
+    }
+
     .nav {
         padding: 18px 0;
         flex-direction: column;
@@ -378,7 +408,7 @@ nav a:hover {
     }
 
     .hero {
-        padding: 65px 0;
+        padding: 80px 0 65px;
     }
 
     .hero h2 {
@@ -387,6 +417,15 @@ nav a:hover {
 
     .hero p {
         font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .services-grid {
